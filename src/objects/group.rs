@@ -8,7 +8,7 @@ pub struct Group {
     pub name: String,
     pub screen_name: String,
     pub is_closed: Integer,
-    pub deactivated: String,
+    pub deactivated: Option<String>,
     pub is_admin: Option<Integer>,
     pub admin_level: Option<Integer>,
     pub is_member: Option<Integer>,
