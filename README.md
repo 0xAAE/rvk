@@ -2,10 +2,10 @@
 [![version][badges/version]][crates.io/rvk]
 [![downloads][badges/downloads]][crates.io/rvk]
 [![license][badges/license]][license]
+[![api version][badges/api-version]][vk-api-version]
 
 > A crate for accessing VK (VKontakte) API in Rust (asynchronously).
 
-The version of VK API that is used by this crate can be found [here][vk-api-version].
 Changelog is available [here][changelog].
 
 # Modules
@@ -21,7 +21,7 @@ Add the dependency to your project:
 <sub>`Cargo.toml`</sub>
 ```toml
 [dependencies]
-rvk = "0.19"
+rvk = "0.21"
 ```
 
 Now you can take a look at `rvk`'s [API documentation][docs.rs/rvk] to learn more about the available functions.
@@ -33,7 +33,7 @@ To use this example, you will **also** need the [`tokio`](https://crates.io/toki
 <sub>`Cargo.toml`</sub>
 ```toml
 [dependencies]
-tokio = { version = "0.2", features = ["full"] }
+tokio = { version = "1.0", features = ["full"] }
 ```
 
 <sub>`main.rs`</sub>
@@ -73,8 +73,6 @@ If you spot any mistakes or bugs, please [report them][issues]!
 
 [docs.rs/rvk]: https://docs.rs/rvk
 
-[vk-api-version]: https://github.com/u32i64/rvk/blob/master/src/lib.rs#L52
-
 [license]: https://github.com/u32i64/rvk/blob/master/LICENSE
 [changelog]: https://github.com/u32i64/rvk/blob/master/CHANGELOG.md
 
@@ -83,6 +81,8 @@ If you spot any mistakes or bugs, please [report them][issues]!
 [badges/version]: https://img.shields.io/crates/v/rvk.svg?style=for-the-badge
 [badges/downloads]: https://img.shields.io/crates/d/rvk.svg?style=for-the-badge
 [badges/license]: https://img.shields.io/crates/l/rvk.svg?style=for-the-badge
+[badges/api-version]: https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Frvk-api-version-badge.warp.workers.dev
+[vk-api-version]: https://github.com/u32i64/rvk/blob/master/src/lib.rs#L47-L48
 
 [modules/api]: https://docs.rs/rvk/*/rvk/api/index.html
 [modules/error]: https://docs.rs/rvk/*/rvk/error/index.html
