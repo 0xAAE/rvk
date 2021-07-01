@@ -51,3 +51,45 @@ pub struct AudioMessage {
     pub link_ogg: String,
     pub link_mp3: String,
 }
+
+#[derive(Debug, PartialEq)]
+// тип документа. Возможные значения: https://vk.com/dev/objects/doc
+pub enum DocumentType {
+    // 1 - текстовые документы
+    Text = 1,
+    // 2 - архивы
+    Archive = 2,
+    // 3 — gif
+    Gif = 3,
+    // 4 — изображения
+    Image = 4,
+    // 5 — аудио
+    Audio = 5,
+    // 6 — видео
+    Video = 6,
+    // 7 — электронные книги
+    Ebook = 7,
+    // 8 — неизвестно
+    Other = 8,
+}
+
+impl From<Integer> for DocumentType {
+    fn from(val: Integer) -> Self {
+        match val {
+            1 => DocumentType::Text,
+            2 => DocumentType::Archive,
+            3 => DocumentType::Gif,
+            4 => DocumentType::Image,
+            5 => DocumentType::Audio,
+            6 => DocumentType::Video,
+            7 => DocumentType::Ebook,
+            _ => DocumentType::Other,
+        }
+    }
+}
+
+#[test]
+fn test_document_type() {
+    assert_eq!(1, DocumentType::Text as Integer);
+    assert_eq!(DocumentType::Archive, 2.into());
+}
