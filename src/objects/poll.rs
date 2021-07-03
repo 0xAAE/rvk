@@ -7,22 +7,31 @@ pub struct Poll {
     pub owner_id: Integer,
     pub created: Integer,
     pub question: String,
+    #[serde(default)]
     pub votes: Integer,
     pub answers: Vec<Answer>,
+    #[serde(default)]
     pub anonymous: Boolean,
+    #[serde(default)]
     pub multiple: Boolean,
     pub answer_ids: Option<Vec<Integer>>,
     pub end_date: Integer,
+    #[serde(default)]
     pub closed: Boolean,
+    #[serde(default)]
     pub is_board: Boolean,
+    #[serde(default)]
     pub can_edit: Boolean,
+    #[serde(default)]
     pub can_vote: Boolean,
+    #[serde(default)]
     pub can_report: Boolean,
+    #[serde(default)]
     pub can_share: Boolean,
-    pub author_id: Integer,
+    pub author_id: Option<Integer>, // optional at least in newsfeed
     pub photo: Option<photo::Photo>,
     pub background: Option<Background>,
-    pub friends: Vec<PollFriend>,
+    pub friends: Option<Vec<PollFriend>>, // optional at least in newsfeed
 }
 
 #[derive(Deserialize, Clone, Debug)]
@@ -45,7 +54,7 @@ pub struct Background {
     pub width: Option<Integer>,
     pub height: Option<Integer>,
     pub images: Option<photo::Size>,
-    pub points: Option<GradientPoint>,
+    pub points: Vec<Option<GradientPoint>>,
 }
 
 #[derive(Deserialize, Clone, Debug)]

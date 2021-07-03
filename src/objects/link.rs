@@ -1,3 +1,4 @@
+use super::invariant_deserialize::ToNum;
 use super::*;
 
 /// <https://vk.com/dev/objects/link>
@@ -23,6 +24,7 @@ pub struct Product {
 /// <https://vk.com/dev/price>
 #[derive(Deserialize, Clone, Debug)]
 pub struct Price {
+    #[serde(deserialize_with = "ToNum::<Integer>::deserialize")]
     pub amount: Integer,
     pub currency: Currency,
     pub text: String,

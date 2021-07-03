@@ -30,7 +30,7 @@ pub struct Video {
     pub date: Integer,
     pub adding_date: Option<Integer>,
     pub views: Integer,
-    pub comments: Integer,
+    pub comments: Option<Integer>, // may absent in NewsFeed.attachments.video
     pub player: Option<String>,
     pub platform: Option<String>,
     pub can_edit: Option<Integer>,
@@ -46,10 +46,10 @@ pub struct Video {
 /// <https://vk.com/dev/objects/video_image>
 #[derive(Deserialize, Clone, Debug)]
 pub struct VideoImage {
-    url: String,
-    width: Integer,
-    height: Integer,
-    with_padding: Option<Integer>,
+    pub url: String,
+    pub width: Integer,
+    pub height: Integer,
+    pub with_padding: Option<Integer>,
 }
 
 /// <https://vk.com/dev/objects/video_album_full>

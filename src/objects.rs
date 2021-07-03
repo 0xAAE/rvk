@@ -23,6 +23,7 @@ pub type Number = f64;
 /// The 'boolean' type that is used in objects.
 pub type Boolean = bool;
 
+pub mod account;
 pub mod app;
 pub mod app_widget;
 pub mod attachment;
@@ -36,10 +37,12 @@ pub mod document;
 pub mod geo;
 pub mod gift;
 pub mod group;
+pub mod invariant_deserialize;
 pub mod link;
 pub mod market_album;
 pub mod market_item;
 pub mod message;
+pub mod newsfeed;
 pub mod note;
 pub mod page;
 pub mod photo;

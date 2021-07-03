@@ -28,7 +28,10 @@ pub struct Photo {
 /// <https://vk.com/dev/photo_sizes>
 #[derive(Deserialize, Clone, Debug)]
 pub struct Size {
-    pub url: String,
+    // normally used
+    pub url: Option<String>,
+    // used in doc::preview::photo::sizes
+    pub src: Option<String>,
     pub width: Option<Integer>,
     pub height: Option<Integer>,
 

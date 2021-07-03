@@ -91,3 +91,10 @@ If you spot any mistakes or bugs, please [report them][issues]!
 
 [vk/methods]: https://vk.com/dev/methods
 [vk/objects]: https://vk.com/dev/objects
+
+### Features
+There is a feature `trace_response` which helps to create reports more informative. If the feature is active the API methods save responses from vk.com into json files.
+The rules of saving are:
+* if parsing the response failed it is stored into `${RVK_TRACE_DIR}/failed/YY-MM-DD_HH-mm-SS.json` file
+* otherwise, if `${RVK_TRACE_ALL}=1` the succeeded response is stored into `${RVK_TRACE_DIR}/succeeded/YY-MM-DD_HH-mm-SS.json` file
+

@@ -1,3 +1,4 @@
+use super::invariant_deserialize::ToStr;
 use super::*;
 
 /// <https://vk.com/dev/objects/user>
@@ -8,8 +9,8 @@ pub struct User {
     pub first_name: String,
     pub last_name: String,
     pub deactivated: Option<String>,
-    pub is_closed: Boolean,
-    pub can_access_closed: Boolean,
+    pub is_closed: Option<Boolean>,
+    pub can_access_closed: Option<Boolean>,
 
     // Optional fields A-L
     pub about: Option<String>,
@@ -91,6 +92,9 @@ pub struct User {
     // online
     pub online: Option<Integer>,
     pub online_mobile: Option<Integer>,
+    // while expecting Option<String> the value may come as Option<Integer>
+    #[serde(default)]
+    #[serde(deserialize_with = "ToStr::deserialize_opt")]
     pub online_app: Option<String>,
 
     pub personal: Option<Personal>,

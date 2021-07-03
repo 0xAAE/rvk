@@ -12,6 +12,7 @@ pub struct Group {
     pub is_admin: Option<Integer>,
     pub admin_level: Option<Integer>,
     pub is_member: Option<Integer>,
+    pub is_advertiser: Option<Integer>,
     pub invited_by: Option<Integer>,
 
     #[serde(rename = "type")]

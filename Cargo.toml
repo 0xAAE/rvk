@@ -10,14 +10,22 @@ keywords = ["vk", "api", "method"]
 categories = ["api-bindings"]
 edition = "2018"
 
+[features]
+default = []
+# tracing the unparsable vk.com responses:
+trace_response = ["chrono"]
+
 [dependencies]
+chrono = { version="0.4", optional=true }
 heck = "0.3"
-reqwest = { version = "0.11", features = ["json"] }
-serde = "1.0"
+log = "0.4"
+num = "0.4"
+reqwest = { version="0.11", features=["json"] }
+serde = { version="1.0", features=["derive"] }
 serde_json = "1.0"
 serde_derive = "1.0"
 thiserror = "1.0"
 lazy_static = "1.1.0"
 
 [dev-dependencies]
-tokio = { version = "1.0", features = ["full"] }
+tokio = { version="1.0", features=["full"] }
