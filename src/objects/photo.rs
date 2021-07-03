@@ -1,3 +1,4 @@
+use super::invariant_deserialize::ToNum;
 use super::*;
 
 /// <https://vk.com/dev/objects/photo>
@@ -57,6 +58,7 @@ pub struct Rect {
 /// <https://vk.com/dev/objects/attachments_w>
 #[derive(Deserialize, Clone, Debug)]
 pub struct Album {
+    #[serde(deserialize_with = "ToNum::<Integer>::deserialize")]
     pub id: Integer,
     pub thumb: photo::Photo,
     pub owner_id: Integer,

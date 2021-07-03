@@ -111,7 +111,7 @@ pub struct NewsAttachment {
     pub page: Option<page::Page>,
 
     // type = album
-    pub album: Option<Album>, // this is the difference from attachment::WallAttacment
+    pub album: Option<photo::Album>,
 
     // type = photos_list
     pub photos_list: Option<Vec<String>>,
@@ -133,19 +133,6 @@ pub struct NewsAttachment {
 
     // type = podcast
     pub podcast: Option<podcast::Podcast>,
-}
-
-/// undocumented, differs from the photo::Album <https://vk.com/dev/objects/attachments_w> by id: String
-#[derive(Deserialize, Clone, Debug)]
-pub struct Album {
-    pub id: i64, //String, // this is the difference from album::Album
-    pub thumb: photo::Photo,
-    pub owner_id: i64,
-    pub title: String,
-    pub description: String,
-    pub created: u64,
-    pub updated: u64,
-    pub size: u64,
 }
 
 // specific for newsfeed types
